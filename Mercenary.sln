@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MercenaryService", "WindowsService\MercenaryService.csproj", "{05F6E839-79A6-44FB-9F95-D6AA1574C3AA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PluginFramework", "PluginFramework", "{FDED8EE4-39F1-477F-BCDC-36E351F50A16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "PluginFramework\Interfaces\Interfaces.csproj", "{99F6F5E0-69EF-4221-AD11-7491FFD69680}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{F347B1AE-940C-4FBB-9DA1-FC249AEE2C09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RanorexPlugin", "Plugins\RanorexPlugin\RanorexPlugin.csproj", "{47EE49CE-E8F9-440C-ADC0-8B9A91245782}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{05F6E839-79A6-44FB-9F95-D6AA1574C3AA}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{05F6E839-79A6-44FB-9F95-D6AA1574C3AA}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{05F6E839-79A6-44FB-9F95-D6AA1574C3AA}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{05F6E839-79A6-44FB-9F95-D6AA1574C3AA}.Debug|x86.ActiveCfg = Debug|x86
+		{05F6E839-79A6-44FB-9F95-D6AA1574C3AA}.Debug|x86.Build.0 = Debug|x86
+		{05F6E839-79A6-44FB-9F95-D6AA1574C3AA}.Release|Any CPU.ActiveCfg = Release|x86
+		{05F6E839-79A6-44FB-9F95-D6AA1574C3AA}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{05F6E839-79A6-44FB-9F95-D6AA1574C3AA}.Release|Mixed Platforms.Build.0 = Release|x86
+		{05F6E839-79A6-44FB-9F95-D6AA1574C3AA}.Release|x86.ActiveCfg = Release|x86
+		{05F6E839-79A6-44FB-9F95-D6AA1574C3AA}.Release|x86.Build.0 = Release|x86
+		{99F6F5E0-69EF-4221-AD11-7491FFD69680}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99F6F5E0-69EF-4221-AD11-7491FFD69680}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99F6F5E0-69EF-4221-AD11-7491FFD69680}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{99F6F5E0-69EF-4221-AD11-7491FFD69680}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{99F6F5E0-69EF-4221-AD11-7491FFD69680}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{99F6F5E0-69EF-4221-AD11-7491FFD69680}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99F6F5E0-69EF-4221-AD11-7491FFD69680}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99F6F5E0-69EF-4221-AD11-7491FFD69680}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{99F6F5E0-69EF-4221-AD11-7491FFD69680}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{99F6F5E0-69EF-4221-AD11-7491FFD69680}.Release|x86.ActiveCfg = Release|Any CPU
+		{47EE49CE-E8F9-440C-ADC0-8B9A91245782}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47EE49CE-E8F9-440C-ADC0-8B9A91245782}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47EE49CE-E8F9-440C-ADC0-8B9A91245782}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{47EE49CE-E8F9-440C-ADC0-8B9A91245782}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{47EE49CE-E8F9-440C-ADC0-8B9A91245782}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{47EE49CE-E8F9-440C-ADC0-8B9A91245782}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47EE49CE-E8F9-440C-ADC0-8B9A91245782}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47EE49CE-E8F9-440C-ADC0-8B9A91245782}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{47EE49CE-E8F9-440C-ADC0-8B9A91245782}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{47EE49CE-E8F9-440C-ADC0-8B9A91245782}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{99F6F5E0-69EF-4221-AD11-7491FFD69680} = {FDED8EE4-39F1-477F-BCDC-36E351F50A16}
+		{47EE49CE-E8F9-440C-ADC0-8B9A91245782} = {F347B1AE-940C-4FBB-9DA1-FC249AEE2C09}
+	EndGlobalSection
+EndGlobal
