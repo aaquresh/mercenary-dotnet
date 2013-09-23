@@ -6,8 +6,16 @@ using Interfaces;
 
 namespace PluginFramework
 {
-    class PluginFramework
+    static class PluginFramework
     {
+        static public string RunTest(string Json)
+        {
+            //Pull test tool info from json config string
+            string TestTool = "";
 
+            //var type = Type.GetType(TestTool);
+
+            return "";
+        }
     }
 }
