@@ -8,12 +8,12 @@ namespace Interfaces
     //Abstract Factory Interface
     public interface IAbstractTestToolFactory
     {
-        IAbstractTestCaseProduct CreateTestCase(string FactoryTestCase, string TestCaseID, string SessionID);
+        IAbstractTestCaseProduct CreateTestCase(string Json);
     }
 
     //Abstract Product Interface
     public interface IAbstractTestCaseProduct
     {
-        void Run(string TestCaseID, string SessionID, string args);
+        void Run(string Json);
     }
 }
