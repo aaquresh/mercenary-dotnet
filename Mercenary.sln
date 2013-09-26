@@ -15,7 +15,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginFramework", "PluginFr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoapUIPlugin", "Plugins\SoapUIPlugin\SoapUIPlugin.csproj", "{8A0445FC-C702-48ED-A550-A4E34F91B355}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrameworkTests", "FrameworkTests\FrameworkTests.csproj", "{85C428E8-483B-4850-A97E-0C5BF2B94586}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{727E5C7C-B9ED-4BD1-966B-BC4255EC0189}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		Mercenary.vsmdi = Mercenary.vsmdi
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
 Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = Mercenary.vsmdi
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|Mixed Platforms = Debug|Mixed Platforms
@@ -75,6 +87,16 @@ Global
 		{8A0445FC-C702-48ED-A550-A4E34F91B355}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{8A0445FC-C702-48ED-A550-A4E34F91B355}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{8A0445FC-C702-48ED-A550-A4E34F91B355}.Release|x86.ActiveCfg = Release|Any CPU
+		{85C428E8-483B-4850-A97E-0C5BF2B94586}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85C428E8-483B-4850-A97E-0C5BF2B94586}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85C428E8-483B-4850-A97E-0C5BF2B94586}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{85C428E8-483B-4850-A97E-0C5BF2B94586}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{85C428E8-483B-4850-A97E-0C5BF2B94586}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{85C428E8-483B-4850-A97E-0C5BF2B94586}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85C428E8-483B-4850-A97E-0C5BF2B94586}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85C428E8-483B-4850-A97E-0C5BF2B94586}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{85C428E8-483B-4850-A97E-0C5BF2B94586}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{85C428E8-483B-4850-A97E-0C5BF2B94586}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

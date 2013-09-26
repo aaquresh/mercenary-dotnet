@@ -26,7 +26,7 @@ namespace SoapUIPlugin
             this.jsonConfigFile = json;
         }
 
-        public void Run(string json)
+        public void Run()
         {
 
         }
