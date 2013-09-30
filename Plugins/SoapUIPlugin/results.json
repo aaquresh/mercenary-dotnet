@@ -16,11 +16,11 @@
 			"dependencies" :
 			[
 				{
-					"product" : "ECIS Desktop",
+					"product" : "Desktop",
 					"version" : "5.1.2"
 				},
 				{
-					"product" : "cPOE",
+					"product" : "ABC",
 					"version" : "2.7"
 				}
 			],
