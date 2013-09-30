@@ -26,9 +26,32 @@ namespace SoapUIPlugin
             this.jsonConfigFile = json;
         }
 
-        public void Run()
+        public string Run()
         {
+            //Declare variables for json config file
 
+            try
+            {
+                //Pull required variables from json config files
+            }
+            catch (Exception ex)
+            {
+                return ex.ToString();
+            }
+
+            //Create cmd text
+
+            //Create process pass required args
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+
+            process.StartInfo.UseShellExecute = false;
+            process.StartInfo.RedirectStandardOutput = true;
+
+            
+
+
+            return "";
         }
     }
     

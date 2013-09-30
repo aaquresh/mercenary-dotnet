@@ -53,9 +53,6 @@ namespace PluginFramework
                 return ex.ToString();
             }
 
-
-
-
             Assembly assembly = Assembly.LoadFrom(pluginPath);
 
             Type type = assembly.GetType(pluginNamespace + "." + pluginName);
@@ -63,13 +60,8 @@ namespace PluginFramework
             IAbstractTestToolFactory instance = Activator.CreateInstance(type) as IAbstractTestToolFactory;
 
             IAbstractTestCaseProduct tcp = instance.CreateTestCase(Json);
-            
-            tcp.Run();
 
-
-
-
-            return "";
+            return tcp.Run();
         }
     }
 }

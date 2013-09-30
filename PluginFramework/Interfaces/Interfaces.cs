@@ -14,6 +14,6 @@ namespace Interfaces
     //Abstract Product Interface
     public interface IAbstractTestCaseProduct
     {
-        void Run();
+        string Run();
     }
 }
