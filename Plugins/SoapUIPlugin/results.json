@@ -1,0 +1,42 @@
+{
+	"result" : "Pass",
+
+    "resultFileLocation" : "",
+
+	"tasks" :
+	[
+		{
+			"plugin" : "soapui",
+			"environment" :
+			{
+				"os" : "windows",
+				"version" : 7
+			},
+
+			"dependencies" :
+			[
+				{
+					"product" : "ECIS Desktop",
+					"version" : "5.1.2"
+				},
+				{
+					"product" : "cPOE",
+					"version" : "2.7"
+				}
+			],
+
+			"install" :
+			[
+				{
+				}
+			],
+
+			"parameters" :
+			{
+				"foo" : [ "parameters", "can", "be", "arrays" ],
+				"bar" : { "canBeObject" : true },
+				"baz" : "or maybe just a string"
+			}
+		}
+	]
+}
