@@ -23,7 +23,7 @@ namespace PluginFramework
             {
                 JObject o = JObject.Parse(Json);
 
-                string testTool = (string)o["tasks"][0]["plugin"];
+                string testTool = (string)o["plugin"];
             }
             catch (Exception ex)
             {

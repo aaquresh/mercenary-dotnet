@@ -30,6 +30,18 @@ namespace SoapUIPlugin
         {
             //Declare variables for json config file
 
+            /*
+            •	C:\Program Files\SmartBear\soapUI-Pro-4.5.1\bin> testrunner.bat -s"CPOECommonHDDServiceSoap11Binding TestSuite" -c"getRepresentation TestCase_Grid" -a -EDefault -I C:\___TRANING_SOAPUI\DEMO-soapui-project.xml
+            */
+
+            string SoapUIAppPath;
+            string SoapUITestSuite;
+            string SoapUITestCase;
+            string SoapUITestProjectPath;
+            bool ExportAllTestResults;
+            string SoapUIEnvironment;
+
+
             try
             {
                 //Pull required variables from json config files

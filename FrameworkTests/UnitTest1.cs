@@ -12,49 +12,67 @@ namespace FrameworkTests
     public class UnitTest1
     {
         [TestMethod]
+        [DeploymentItem(@"\FrameworkTests\config.json")]
         public void PluginFramework_1()
         {
-            Assert.IsTrue("" == PluginFramework.PluginFramework.RunTest(@"{
-	""message"" : ""tasks"",
+            Assert.IsTrue("" == PluginFramework.PluginFramework.RunTest(@"
 
-	""tasks"" :
-	[
-		{
-			""plugin"" : ""soapui"",
-			""environment"" :
-			{
-				""os"" : ""windows"",
-				""version"" : 7
-			},
-
-			""dependencies"" :
-			[
-				{
-					""product"" : ""ECIS Desktop"",
-					""version"" : ""5.1.2""
-				},
-				{
-					""product"" : ""cPOE"",
-					""version"" : ""2.7""
-				}
-			],
-
-			""install"" :
-			[
-				{
-				}
-			],
-
+        {
+    		""plugin"" : ""soapui"",
 			""parameters"" :
 			{
-				""foo"" : [ ""parameters"", ""can"", ""be"", ""arrays"" ],
-				""bar"" : { ""canBeObject"" : true },
-				""baz"" : ""or maybe just a string""
-			}
+                ""test"" :
+                {
+                    ""case"" : ""getRepresentation TestCase_Grid"",
+                    ""suite"" : ""CPOECommonHDDServiceSoap11Binding TestSuite"",
+                    ""project"" : ""TestProject""
+                },
+                ""options"" : 
+                {
+                    ""ExportAllResults"" : ""true""
+                }
+			},
+            ""results"" :
+            {
+                ""outcome"" : """",
+                ""message"" : """",
+                ""attachments"" :
+                {
+                }
+            }
 		}
-	]
-}"));
+"));
             
         }
+
+        /*
+
+        {
+			"plugin" : "soapui",
+			"parameters" :
+			{
+                "test" :
+                {
+                    "case" : "",
+                    "suite" : "",
+                    "project" : ""
+                }
+                "options" : 
+                {
+                    "ExportAllResults" : ""
+                }
+			}
+            "results" :
+            {
+                "outcome" : "",
+                "attachments" 
+                {
+                    "log.txt" : "a;sljkdfweoijf23lsfo23jo32 base64 encoding crap" 
+                }
+            }
+		}
+        
+        */
+
     }
 }

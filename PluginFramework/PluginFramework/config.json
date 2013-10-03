@@ -1,12 +1,13 @@
 {
     "plugin" : 
     [
-        
+        {
        "namespace" : "SoapUIPlugin",
 
         "name" : "SoapUIPlugin",
 
-        "dllLocation" : "C:\Users\cmnimnic\Documents\GitHub\mercenary-dotnet\Plugins\SoapUIPlugin\bin\Debug\SoapUIPlugin.dll" 
+        "dllLocation" : "C:\\Users\\cmnimnic\\Documents\\GitHub\\mercenary-dotnet\\Plugins\\SoapUIPlugin\\bin\\Debug\\SoapUIPlugin.dll" 
+        }
     ]
-	
+    
 }
