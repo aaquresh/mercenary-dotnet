@@ -14,16 +14,18 @@ namespace PluginFramework
     {
         static public string RunTest(string Json)
         {
-            string pluginName;
-            string pluginPath;
-            string pluginNamespace;
+            string pluginName = "";
+            string pluginPath = "";
+            string pluginNamespace = "";
+
+            string testTool;
 
             //Pull test tool info from json config string
             try
             {
                 JObject o = JObject.Parse(Json);
 
-                string testTool = (string)o["plugin"];
+                testTool = (string)o["plugin"];
             }
             catch (Exception ex)
             {
@@ -38,14 +40,20 @@ namespace PluginFramework
 
                 string config = sr.ReadToEnd();
 
-                JObject jConfig = JObject.Parse(config);
+                //JObject jConfig = JObject.Parse(config);
 
                 //Need to fix this so that it cycles through possible plugins
 
-
-                pluginName = (string)jConfig["plugin"][0]["name"];
-                pluginPath = (string)jConfig["plugin"][0]["dllLocation"];
-                pluginNamespace = (string)jConfig["plugin"][0]["namespace"];
+                JsonPluginConfig jpc = new JsonPluginConfig(config);
+                foreach (JsonPlugin jp in jpc)
+                {
+                    if (jp.Name == testTool)
+                    {
+                        pluginName = jp.Name;
+                        pluginPath = jp.Path;
+                        pluginNamespace = jp.NamespacePath;
+                    }
+                }
 
             }
             catch (Exception ex)

@@ -7,7 +7,20 @@
         "name" : "SoapUIPlugin",
 
         "dllLocation" : "C:\\Users\\cmnimnic\\Documents\\GitHub\\mercenary-dotnet\\Plugins\\SoapUIPlugin\\bin\\Debug\\SoapUIPlugin.dll" 
+        },
+    	{
+       "namespace" : "RanorexPlugin",
+
+        "name" : "RanorexPlugin",
+
+        "dllLocation" : "C:\\Users\\cmnimnic\\Documents\\GitHub\\mercenary-dotnet\\Plugins\\RanorexPlugin\\bin\\Debug\\RanorexPlugin.dll" 
         }
-    ]
+    ],
+	"SoapUIProjects" :
+	[
+		{
+			"TestProject" : "C:\\Users\\cmnimnic\\Desktop\\FHH-4-1-soapui-project.xml"
+		}
+	]
     
 }

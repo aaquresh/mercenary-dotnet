@@ -18,7 +18,7 @@ namespace FrameworkTests
             Assert.IsTrue("" == PluginFramework.PluginFramework.RunTest(@"
 
         {
-    		""plugin"" : ""soapui"",
+    		""plugin"" : ""SoapUIPlugin"",
 			""parameters"" :
 			{
                 ""test"" :
@@ -45,6 +45,45 @@ namespace FrameworkTests
             
         }
 
+
+
+        [TestMethod]
+        [DeploymentItem(@"\FrameworkTests\config.json")]
+        public void PluginFramework_2()
+        {
+            JsonPluginConfig jpc = new JsonPluginConfig(@"
+
+{
+    ""plugin"" : 
+    [
+        {
+       ""namespace"" : ""SoapUIPlugin"",
+
+        ""name"" : ""SoapUIPlugin"",
+
+        ""dllLocation"" : ""C:\\Users\\cmnimnic\\Documents\\GitHub\\mercenary-dotnet\\Plugins\\SoapUIPlugin\\bin\\Debug\\SoapUIPlugin.dll"" 
+        },
+    	{
+       ""namespace"" : ""RanorexPlugin"",
+
+        ""name"" : ""RanorexPlugin"",
+
+        ""dllLocation"" : ""C:\\Users\\cmnimnic\\Documents\\GitHub\\mercenary-dotnet\\Plugins\\RanorexPlugin\\bin\\Debug\\RanorexPlugin.dll"" 
+        }
+    ],
+	""SoapUIProjects"" :
+	[
+		{
+			""TestProject"" : ""C:\\Users\\cmnimnic\\Desktop\\FHH-4-1-soapui-project.xml""
+		}
+	]
+    
+}
+            ");
+
+            
+
+        }
         /*
 
         {
