@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\..\Desktop\json.net\Bin\Net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -47,6 +50,10 @@
     <ProjectReference Include="..\..\PluginFramework\Interfaces\Interfaces.csproj">
       <Project>{99F6F5E0-69EF-4221-AD11-7491FFD69680}</Project>
       <Name>Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\PluginFramework\PluginFramework\PluginFramework.csproj">
+      <Project>{5DAE6742-5AC2-4346-B1EB-EE6D8FFFFB96}</Project>
+      <Name>PluginFramework %28PluginFramework\PluginFramework%29</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

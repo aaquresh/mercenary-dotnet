@@ -48,10 +48,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Plugins\SoapUIPlugin\SoapUIPlugin.csproj">
-      <Project>{8A0445FC-C702-48ED-A550-A4E34F91B355}</Project>
-      <Name>SoapUIPlugin</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Interfaces\Interfaces.csproj">
       <Project>{99F6F5E0-69EF-4221-AD11-7491FFD69680}</Project>
       <Name>Interfaces</Name>

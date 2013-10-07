@@ -40,10 +40,6 @@ namespace PluginFramework
 
                 string config = sr.ReadToEnd();
 
-                //JObject jConfig = JObject.Parse(config);
-
-                //Need to fix this so that it cycles through possible plugins
-
                 JsonPluginConfig jpc = new JsonPluginConfig(config);
                 foreach (JsonPlugin jp in jpc)
                 {

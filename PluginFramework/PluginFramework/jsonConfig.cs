@@ -22,7 +22,7 @@ namespace PluginFramework
 
             while (count > 0)
             {
-                JsonPlugin jp = new JsonPlugin((string)jConfig["plugin"][count - 1]["name"], (string)jConfig["plugin"][count - 1]["dllLocation"], (string)jConfig["plugin"][count - 1]["namespace"]);
+                JsonPlugin jp = new JsonPlugin((string)jConfig["plugin"][count - 1]["name"], (string)jConfig["plugin"][count - 1]["dllLocation"], (string)jConfig["plugin"][count - 1]["namespace"], (string)jConfig["plugin"][count - 1]["appPath"]);
                 jpArray[count - 1] = jp;
                 count--;
             }
@@ -95,12 +95,14 @@ namespace PluginFramework
         string name;
         string path;
         string namespacePath;
+        string appPath;
 
-        public JsonPlugin(string name, string path, string namespacePath)
+        public JsonPlugin(string name, string path, string namespacePath, string appPath)
         {
             this.name = name;
             this.path = path;
             this.namespacePath = namespacePath;
+            this.appPath = appPath;
         }
 
         public string Name 
@@ -124,6 +126,12 @@ namespace PluginFramework
                 return namespacePath;
             }
         }
-
+        public string AppPath
+        {
+            get
+            {
+                return appPath;
+            }
+        }
     }
 }

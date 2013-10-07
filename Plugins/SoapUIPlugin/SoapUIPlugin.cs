@@ -5,6 +5,8 @@ using System.Text;
 using Interfaces;
 using System.Configuration;
 using System.IO;
+using Newtonsoft.Json.Linq;
+using PluginFramework;
 
 namespace SoapUIPlugin
 {
@@ -19,32 +21,51 @@ namespace SoapUIPlugin
     }
     public class RunSoapUI : IAbstractTestCaseProduct
     {
-        private string jsonConfigFile;
+        private string jsonTestFile;
 
         public RunSoapUI(string json)
         {
-            this.jsonConfigFile = json;
+            this.jsonTestFile = json;
         }
 
         public string Run()
         {
             //Declare variables for json config file
 
-            /*
-            •	C:\Program Files\SmartBear\soapUI-Pro-4.5.1\bin> testrunner.bat -s"CPOECommonHDDServiceSoap11Binding TestSuite" -c"getRepresentation TestCase_Grid" -a -EDefault -I C:\___TRANING_SOAPUI\DEMO-soapui-project.xml
-            */
-
-            string SoapUIAppPath;
-            string SoapUITestSuite;
-            string SoapUITestCase;
-            string SoapUITestProjectPath;
-            bool ExportAllTestResults;
-            string SoapUIEnvironment;
-
+            string testTool = "SoapUIPlugin";
+            string appPath;
+            string testSuite;
+            string testCase;
+            string testProjectPath;
+            bool exportAllTestResults;
+            string environment;
 
             try
             {
-                //Pull required variables from json config files
+                JObject jTestFile = JObject.Parse(jsonTestFile);
+
+                StreamReader sr = new StreamReader("config.json");
+
+                string config = sr.ReadToEnd();
+
+                JsonPluginConfig jpc = new JsonPluginConfig(config);
+                foreach (JsonPlugin jp in jpc)
+                {
+                    if (jp.Name == testTool)
+                    {
+                        appPath = jp.AppPath;
+                    }
+                }
+
+                testSuite = "";
+                testCase = "";
+                testProjectPath = "";
+                exportAllTestResults = true;
+                environment = "";
+
+
+
+
             }
             catch (Exception ex)
             {
@@ -53,6 +74,13 @@ namespace SoapUIPlugin
 
             //Create cmd text
 
+            /*
+            •	C:\Program Files\SmartBear\soapUI-Pro-4.5.1\bin> testrunner.bat -s"CPOECommonHDDServiceSoap11Binding TestSuite" -c"getRepresentation TestCase_Grid" -a -EDefault -I C:\___TRANING_SOAPUI\DEMO-soapui-project.xml
+            */
+
+            string strCmdText = strCmdText = "-s" + @"C:\Program Files\SmartBear\soapUI-Pro-4.5.1\bin> testrunner.bat -s""CPOECommonHDDServiceSoap11Binding TestSuite"" -c""getRepresentation TestCase_Grid"" -a -EDefault -I C:\___TRANING_SOAPUI\DEMO-soapui-project.xml";
+
+
             //Create process pass required args
             System.Diagnostics.Process process = new System.Diagnostics.Process();
             System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
@@ -60,10 +88,29 @@ namespace SoapUIPlugin
             process.StartInfo.UseShellExecute = false;
             process.StartInfo.RedirectStandardOutput = true;
 
-            
+            startInfo.FileName = @"C:\Program Files\SmartBear\soapUI-Pro-4.5.2\bin\testrunner.bat";
+            process.StartInfo = startInfo;
+            process.Start();
+            process.WaitForExit();
+
 
 
             return "";
+        }
+    }
+
+    public class SoapUIRequest
+    {
+        string appPath;
+        string testSuite;
+        string testCase;
+        string testProjectPath;
+        bool exportAllTestResults;
+        string environment;
+
+        public SoapUIRequest(string json)
+        {
+
         }
     }
     

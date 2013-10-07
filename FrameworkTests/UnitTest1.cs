@@ -12,7 +12,7 @@ namespace FrameworkTests
     public class UnitTest1
     {
         [TestMethod]
-        [DeploymentItem(@"\FrameworkTests\config.json")]
+        [DeploymentItem(@"\PluginFramework\PluginFramework\config.json")]
         public void PluginFramework_1()
         {
             Assert.IsTrue("" == PluginFramework.PluginFramework.RunTest(@"
@@ -61,14 +61,18 @@ namespace FrameworkTests
 
         ""name"" : ""SoapUIPlugin"",
 
-        ""dllLocation"" : ""C:\\Users\\cmnimnic\\Documents\\GitHub\\mercenary-dotnet\\Plugins\\SoapUIPlugin\\bin\\Debug\\SoapUIPlugin.dll"" 
+        ""dllLocation"" : ""C:\\Users\\cmnimnic\\Documents\\GitHub\\mercenary-dotnet\\Plugins\\SoapUIPlugin\\bin\\Debug\\SoapUIPlugin.dll"", 
+        
+        ""appPath"" : ""C:\\Program Files\\SmartBear\\soapUI-Pro-4.5.2\\bin"" 
         },
     	{
        ""namespace"" : ""RanorexPlugin"",
 
         ""name"" : ""RanorexPlugin"",
 
-        ""dllLocation"" : ""C:\\Users\\cmnimnic\\Documents\\GitHub\\mercenary-dotnet\\Plugins\\RanorexPlugin\\bin\\Debug\\RanorexPlugin.dll"" 
+        ""dllLocation"" : ""C:\\Users\\cmnimnic\\Documents\\GitHub\\mercenary-dotnet\\Plugins\\RanorexPlugin\\bin\\Debug\\RanorexPlugin.dll"", 
+
+        ""appPath"" : ""C:\\Program Files\\SmartBear\\soapUI-Pro-4.5.2\\bin"" 
         }
     ],
 	""SoapUIProjects"" :
