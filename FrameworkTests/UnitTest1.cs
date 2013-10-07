@@ -48,7 +48,7 @@ namespace FrameworkTests
 
 
         [TestMethod]
-        [DeploymentItem(@"\FrameworkTests\config.json")]
+        [DeploymentItem(@"\PluginFramework\PluginFramework\config.json")]
         public void PluginFramework_2()
         {
             JsonPluginConfig jpc = new JsonPluginConfig(@"

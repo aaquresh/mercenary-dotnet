@@ -78,7 +78,7 @@ namespace SoapUIPlugin
             •	C:\Program Files\SmartBear\soapUI-Pro-4.5.1\bin> testrunner.bat -s"CPOECommonHDDServiceSoap11Binding TestSuite" -c"getRepresentation TestCase_Grid" -a -EDefault -I C:\___TRANING_SOAPUI\DEMO-soapui-project.xml
             */
 
-            string strCmdText = strCmdText = "-s" + @"C:\Program Files\SmartBear\soapUI-Pro-4.5.1\bin> testrunner.bat -s""CPOECommonHDDServiceSoap11Binding TestSuite"" -c""getRepresentation TestCase_Grid"" -a -EDefault -I C:\___TRANING_SOAPUI\DEMO-soapui-project.xml";
+            string strCmdText = strCmdText = @"-sGetSecurityTokens -cGetToken -a -EDefault -I C:\Users\cmnimnic\Desktop\FHH-4-1-soapui-project.xml >C:\share\test.log";
 
 
             //Create process pass required args
@@ -88,8 +88,11 @@ namespace SoapUIPlugin
             process.StartInfo.UseShellExecute = false;
             process.StartInfo.RedirectStandardOutput = true;
 
+            startInfo.Arguments = strCmdText;
+
             startInfo.FileName = @"C:\Program Files\SmartBear\soapUI-Pro-4.5.2\bin\testrunner.bat";
             process.StartInfo = startInfo;
+            
             process.Start();
             process.WaitForExit();
 
