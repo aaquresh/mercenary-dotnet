@@ -23,8 +23,8 @@ namespace FrameworkTests
 			{
                 ""test"" :
                 {
-                    ""case"" : ""getRepresentation TestCase_Grid"",
-                    ""suite"" : ""CPOECommonHDDServiceSoap11Binding TestSuite"",
+                    ""case"" : ""GetToken"",
+                    ""suite"" : ""GetSecurityTokens"",
                     ""project"" : ""TestProject""
                 },
                 ""options"" : 

@@ -36,9 +36,8 @@ namespace SoapUIPlugin
             string appPath;
             string testSuite;
             string testCase;
+            string testProject;
             string testProjectPath;
-            bool exportAllTestResults;
-            string environment;
 
             try
             {
@@ -57,11 +56,16 @@ namespace SoapUIPlugin
                     }
                 }
 
-                testSuite = "";
-                testCase = "";
-                testProjectPath = "";
-                exportAllTestResults = true;
-                environment = "";
+
+                testSuite = "-s" + (string)jTestFile["parameters"]["test"]["suite"];
+                testCase = "-c" + (string)jTestFile["parameters"]["test"]["case"];
+                testProject = (string)jTestFile["parameters"]["test"]["project"];
+
+                JObject jProject = JObject.Parse(config);
+
+                testProjectPath = "-I " + (string)jProject["SoapUIProjects"][testProject];
+                
+
 
 
 
@@ -78,7 +82,7 @@ namespace SoapUIPlugin
             •	C:\Program Files\SmartBear\soapUI-Pro-4.5.1\bin> testrunner.bat -s"CPOECommonHDDServiceSoap11Binding TestSuite" -c"getRepresentation TestCase_Grid" -a -EDefault -I C:\___TRANING_SOAPUI\DEMO-soapui-project.xml
             */
 
-            string strCmdText = strCmdText = @"-sGetSecurityTokens -cGetToken -a -EDefault -I C:\Users\cmnimnic\Desktop\FHH-4-1-soapui-project.xml >C:\share\test.log";
+            string strCmdText = strCmdText = testSuite + " " + testCase + @" -a -EDefault " + testProjectPath + @" >C:\share\test.log";
 
 
             //Create process pass required args
