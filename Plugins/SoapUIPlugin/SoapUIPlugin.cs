@@ -38,10 +38,11 @@ namespace SoapUIPlugin
             string testCase;
             string testProject;
             string testProjectPath;
+            JObject jTestFile;
 
             try
             {
-                JObject jTestFile = JObject.Parse(jsonTestFile);
+                jTestFile = JObject.Parse(jsonTestFile);
 
                 StreamReader sr = new StreamReader("config.json");
 
@@ -82,7 +83,7 @@ namespace SoapUIPlugin
             •	C:\Program Files\SmartBear\soapUI-Pro-4.5.1\bin> testrunner.bat -s"CPOECommonHDDServiceSoap11Binding TestSuite" -c"getRepresentation TestCase_Grid" -a -EDefault -I C:\___TRANING_SOAPUI\DEMO-soapui-project.xml
             */
 
-            string strCmdText = strCmdText = testSuite + " " + testCase + @" -a -EDefault " + testProjectPath + @" >C:\share\test.log";
+            string strCmdText = strCmdText = testSuite + " " + testCase + @" -a -EDefault " + testProjectPath + @" >test.log";
 
 
             //Create process pass required args
@@ -101,8 +102,50 @@ namespace SoapUIPlugin
             process.WaitForExit();
 
 
+            //Add reading result file and getting test result
+
+            StreamReader sreader = new StreamReader("test.log");
+            while (sreader.Peek() >= 0)
+            {
+                string s = sreader.ReadLine();
+                if (s.Contains("[FINISHED]"))
+                {
+                    //Add in code to edit json request and pass back pass/fail result and results byte[]
+                    jTestFile["results"]["outcome"] = "Pass";
+                    string byteArray = ConvertResultsToByteArray("test.log");
+                    jTestFile["results"]["attachments"]["1"] = byteArray;
+
+                    return jTestFile.ToString();
+                }
+                else if (s.Contains("[FAILED]"))
+                {
+                    //Add in code to edit json request and pass back pass/fail result and results byte[]
+                    jTestFile["results"]["outcome"] = "Fail";
+                    string byteArray = ConvertResultsToByteArray("test.log");
+                    jTestFile["results"]["attachments"]["1"] = byteArray;
+                    return jTestFile.ToString();
+                }
+
+            }
+
+
 
             return "";
+        }
+
+        private string ConvertResultsToByteArray(string file)
+        {
+            Stream s = File.OpenRead(file);
+            byte[] b;
+
+            using (BinaryReader br = new BinaryReader(s))
+            {
+                b = br.ReadBytes((int)s.Length);
+            }
+
+
+
+            return Encoding.UTF8.GetString(b, 0, b.Length);
         }
     }
 

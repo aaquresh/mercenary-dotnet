@@ -15,7 +15,7 @@ namespace FrameworkTests
         [DeploymentItem(@"\PluginFramework\PluginFramework\config.json")]
         public void PluginFramework_1()
         {
-            Assert.IsTrue("" == PluginFramework.PluginFramework.RunTest(@"
+            Assert.IsTrue("" != PluginFramework.PluginFramework.RunTest(@"
 
         {
     		""plugin"" : ""SoapUIPlugin"",
