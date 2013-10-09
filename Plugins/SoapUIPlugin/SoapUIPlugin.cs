@@ -39,6 +39,7 @@ namespace SoapUIPlugin
             string testProject;
             string testProjectPath;
             JObject jTestFile;
+            string soapUIPath;
 
             try
             {
@@ -137,15 +138,26 @@ namespace SoapUIPlugin
         {
             Stream s = File.OpenRead(file);
             byte[] b;
+            string stream;
 
+            s.Position = 0;
+            using (StreamReader reader = new StreamReader(s, Encoding.UTF8))
+            {
+                stream = reader.ReadToEnd();
+            }
+
+            b = System.Text.Encoding.ASCII.GetBytes(stream);
+
+
+            /*
             using (BinaryReader br = new BinaryReader(s))
             {
                 b = br.ReadBytes((int)s.Length);
             }
+            */
 
-
-
-            return Encoding.UTF8.GetString(b, 0, b.Length);
+            //return Encoding.UTF8.GetString(b, 0, b.Length);
+            return System.Convert.ToBase64String(b);
         }
     }
 

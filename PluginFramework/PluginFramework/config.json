@@ -7,8 +7,9 @@
         "name" : "SoapUIPlugin",
 
         "dllLocation" : "C:\\Users\\cmnimnic\\Documents\\GitHub\\mercenary-dotnet\\Plugins\\SoapUIPlugin\\bin\\Debug\\SoapUIPlugin.dll",
-		
+    	
 		"appPath" : "C:\\Program Files\\SmartBear\\soapUI-Pro-4.5.2\\bin"
+
         },
     	{
        "namespace" : "RanorexPlugin",
@@ -18,11 +19,12 @@
         "dllLocation" : "C:\\Users\\cmnimnic\\Documents\\GitHub\\mercenary-dotnet\\Plugins\\RanorexPlugin\\bin\\Debug\\RanorexPlugin.dll" 
         }
     ],
-	"SoapUIProjects" :
-	
+	"ApplicationPath" : 
+		{
+			"SoapUI" : "C:\\Program Files\\SmartBear\\soapUI-Pro-4.5.2\\bin\\testrunner.bat"
+		},
+    "SoapUIProjects" :
 		{
 			"TestProject" : "C:\\Users\\cmnimnic\\Desktop\\FHH-4-1-soapui-project.xml"		
 		}
-	
-    
 }

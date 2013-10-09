@@ -11,11 +11,14 @@ namespace FrameworkTests
     [TestClass]
     public class UnitTest1
     {
+        /// <summary>
+        /// Test Case uses valid json request and verifies that something is returned.
+        /// </summary>
         [TestMethod]
         [DeploymentItem(@"\PluginFramework\PluginFramework\config.json")]
-        public void PluginFramework_1()
+        public void RunTest_SoapUIPlugin_CorrectJsonRequest()
         {
-            Assert.IsTrue("" != PluginFramework.PluginFramework.RunTest(@"
+            string jsonResponse = PluginFramework.PluginFramework.RunTest(@"
 
         {
     		""plugin"" : ""SoapUIPlugin"",
@@ -41,9 +44,87 @@ namespace FrameworkTests
                 }
             }
 		}
-"));
+");
+            Assert.AreNotEqual("", jsonResponse);
+        }
+
+        /// <summary>
+        /// Test Case uses invalid json request and a valid exception is thrown.
+        /// </summary>
+        [TestMethod]
+        [DeploymentItem(@"\PluginFramework\PluginFramework\config.json")]
+        public void RunTest_SoapUIPlugin_BadJsonRequest()
+        {
+            string jsonResponse = PluginFramework.PluginFramework.RunTest(@"
+
+        {
+    		""plugin"" : ""SoapUIPlugin"",
+			""parameters"" :
+			{
+                ""test"" :
+                
+                    ""case"" : ""GetToken"",
+                    ""suite"" : ""GetSecurityTokens"",
+                    ""project"" : ""TestProject""
+                },
+                ""options"" : 
+                {
+                    ""ExportAllResults"" : ""true""
+                }
+			},
+            ""results"" :
+            {
+                ""outcome"" : """",
+                ""message"" : """",
+                ""attachments"" :
+                {
+                }
+            }
+		}
+");
+            Assert.IsTrue(jsonResponse.Contains("Newtonsoft.Json.JsonReaderException:"));
             
         }
+
+        /// <summary>
+        /// Test Case uses valid json request with missing plugin value.
+        /// </summary>
+        [TestMethod]
+        [DeploymentItem(@"\PluginFramework\PluginFramework\config.json")]
+        public void RunTest_SoapUIPlugin_CorrectJsonRequest1()
+        {
+            string jsonResponse = PluginFramework.PluginFramework.RunTest(@"
+
+        {
+    		""plugin"" : ""SoapUIPlugin"",
+			""parameters"" :
+			{
+                ""test"" :
+                {
+                    ""case"" : ""GetToken"",
+                    ""suite"" : ""GetSecurityTokens"",
+                    ""project"" : ""TestProject""
+                },
+                ""options"" : 
+                {
+                    ""ExportAllResults"" : ""true""
+                }
+			},
+            ""results"" :
+            {
+                ""outcome"" : """",
+                ""message"" : """",
+                ""attachments"" :
+                {
+                }
+            }
+		}
+");
+            Assert.AreNotEqual("", jsonResponse);
+        }
+
+
+
 
 
 
@@ -110,7 +191,7 @@ namespace FrameworkTests
                 "outcome" : "",
                 "attachments" 
                 {
-                    "log.txt" : "a;sljkdfweoijf23lsfo23jo32 base64 encoding crap" 
+                    "log.txt" : "a;sljkdfweoijf23lsfo23jo32 base64 encoding stuff" 
                 }
             }
 		}
