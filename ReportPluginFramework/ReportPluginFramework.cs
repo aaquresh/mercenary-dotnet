@@ -3,16 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO;
-using Interfaces;
+using ReportInterfaces;
 using Newtonsoft.Json.Linq;
 using System.Reflection;
 
-
-namespace PluginFramework
+namespace ReportPluginFramework
 {
-    public static class PluginFramework
+    public class ReportPluginFramework
     {
-        static public string RunTest(string Json)
+        static public string RunReport(string Json)
         {
             string pluginName = "";
             string pluginPath = "";
@@ -40,16 +39,16 @@ namespace PluginFramework
 
                 string config = sr.ReadToEnd();
 
-                JsonPluginConfig jpc = new JsonPluginConfig(config);
-                foreach (JsonPlugin jp in jpc)
-                {
-                    if (jp.Name == testTool)
-                    {
-                        pluginName = jp.Name;
-                        pluginPath = jp.Path;
-                        pluginNamespace = jp.NamespacePath;
-                    }
-                }
+                //JsonPluginConfig jpc = new JsonPluginConfig(config);
+                //foreach (JsonPlugin jp in jpc)
+                //{
+                //    if (jp.Name == testTool)
+                //    {
+                //        pluginName = jp.Name;
+                //        pluginPath = jp.Path;
+                //        pluginNamespace = jp.NamespacePath;
+                //    }
+                //}
 
             }
             catch (Exception ex)
@@ -61,9 +60,9 @@ namespace PluginFramework
 
             Type type = assembly.GetType(pluginNamespace + "." + pluginName);
 
-            IAbstractTestToolFactory instance = Activator.CreateInstance(type) as IAbstractTestToolFactory;
+            IAbstractReportFactory instance = Activator.CreateInstance(type) as IAbstractReportFactory;
 
-            IAbstractTestCaseProduct tcp = instance.CreateTestCase(Json);
+            IAbstractReportProduct tcp = instance.CreateReport(Json);
 
             return tcp.Run();
         }
