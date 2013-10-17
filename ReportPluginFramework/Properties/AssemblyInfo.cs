@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("ReportPluginFramework")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Intermountain Healthcare")]
 [assembly: AssemblyProduct("ReportPluginFramework")]
-[assembly: AssemblyCopyright("Copyright ©  2013")]
+[assembly: AssemblyCopyright("Copyright © Intermountain Healthcare 2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("67c36fc4-3af3-4a9f-b720-293f02c0aec3")]
+[assembly: Guid("a8a5b185-5389-40ea-b436-f020b492f0c9")]
 
 // Version information for an assembly consists of the following four values:
 //

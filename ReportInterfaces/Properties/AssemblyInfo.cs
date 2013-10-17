@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Interfaces")]
+[assembly: AssemblyTitle("ReportInterfaces")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Interfaces")]
-[assembly: AssemblyCopyright("Copyright ©  2013")]
+[assembly: AssemblyCompany("Intermountain Healthcare")]
+[assembly: AssemblyProduct("ReportInterfaces")]
+[assembly: AssemblyCopyright("Copyright © Intermountain Healthcare 2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("cc11c0a5-78f7-49e1-903b-dcf65b2af9e6")]
+[assembly: Guid("9b1b95ae-2fee-409c-943c-47fa07661572")]
 
 // Version information for an assembly consists of the following four values:
 //
