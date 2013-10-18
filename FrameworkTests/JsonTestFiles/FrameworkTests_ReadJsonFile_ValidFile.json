@@ -1,0 +1,30 @@
+{
+    "message" : "tasks",
+    "testcases" :
+    [
+        {
+        "plugin" : "SoapUIPlugin",
+        "parameters" :
+	    {
+	       "test" :
+            {
+                "case" : "GetToken",
+                "suite" : "GetSecurityTokens",
+                "project" : "TestProject"
+            },
+            "options" : 
+            {
+                "ExportAllResults" : "true"
+            }
+			},
+	    "results" :
+        {
+            "outcome" : "",
+            "message" : "",
+            "attachments" :
+            {
+            }
+         }
+        }
+    ]
+}

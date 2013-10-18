@@ -9,7 +9,7 @@ using Newtonsoft.Json.Linq;
 namespace FrameworkTests
 {
     [TestClass]
-    public class UnitTest1
+    public class AutomationFrameworkTests
     {
         /// <summary>
         /// Test Case uses valid json request and verifies that something is returned.
@@ -122,11 +122,6 @@ namespace FrameworkTests
 ");
             Assert.AreNotEqual("", jsonResponse);
         }
-
-
-
-
-
 
         [TestMethod]
         [DeploymentItem(@"\PluginFramework\PluginFramework\config.json")]

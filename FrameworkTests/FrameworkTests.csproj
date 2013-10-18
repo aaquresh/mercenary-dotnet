@@ -50,13 +50,38 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="AutomationFrameworkTests.cs" />
+    <Compile Include="ReportFrameworkTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ExcelReport\ExcelReportPlugin.csproj">
+      <Project>{1482ADF1-DF36-4B5F-A317-E6050E2E7257}</Project>
+      <Name>ExcelReportPlugin</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PluginFramework\PluginFramework\PluginFramework.csproj">
       <Project>{5DAE6742-5AC2-4346-B1EB-EE6D8FFFFB96}</Project>
       <Name>PluginFramework %28PluginFramework\PluginFramework%29</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ReportPluginFramework\ReportPluginFramework.csproj">
+      <Project>{0B11B9EE-108B-4C56-9DD2-61020DCFA778}</Project>
+      <Name>ReportPluginFramework %28ReportPluginFramework\ReportPluginFramework%29</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="JsonTestFiles\ReportRequest_TestCase_Populates.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="JsonTestFiles\AutomationPluginRequest.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="JsonTestFiles\FrameworkTests_ReadJsonFile_ValidFile.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="JsonTestFiles\ReportPluginRequest.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

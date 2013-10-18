@@ -30,6 +30,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportPluginFramework", "Re
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportInterfaces", "ReportInterfaces\ReportInterfaces.csproj", "{D2BC52CB-17F8-4096-8FAA-22810CCAF26A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReportPlugins", "ReportPlugins", "{1D0F1C32-AEF3-4028-8A19-A6D420C8F281}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelReportPlugin", "ExcelReport\ExcelReportPlugin.csproj", "{1482ADF1-DF36-4B5F-A317-E6050E2E7257}"
+EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = Mercenary.vsmdi
@@ -123,6 +127,16 @@ Global
 		{D2BC52CB-17F8-4096-8FAA-22810CCAF26A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{D2BC52CB-17F8-4096-8FAA-22810CCAF26A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{D2BC52CB-17F8-4096-8FAA-22810CCAF26A}.Release|x86.ActiveCfg = Release|Any CPU
+		{1482ADF1-DF36-4B5F-A317-E6050E2E7257}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1482ADF1-DF36-4B5F-A317-E6050E2E7257}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1482ADF1-DF36-4B5F-A317-E6050E2E7257}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{1482ADF1-DF36-4B5F-A317-E6050E2E7257}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{1482ADF1-DF36-4B5F-A317-E6050E2E7257}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1482ADF1-DF36-4B5F-A317-E6050E2E7257}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1482ADF1-DF36-4B5F-A317-E6050E2E7257}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1482ADF1-DF36-4B5F-A317-E6050E2E7257}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{1482ADF1-DF36-4B5F-A317-E6050E2E7257}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{1482ADF1-DF36-4B5F-A317-E6050E2E7257}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -134,5 +148,6 @@ Global
 		{8A0445FC-C702-48ED-A550-A4E34F91B355} = {F347B1AE-940C-4FBB-9DA1-FC249AEE2C09}
 		{0B11B9EE-108B-4C56-9DD2-61020DCFA778} = {4B009D0E-B651-4207-A55E-4D3ABE58FDCE}
 		{D2BC52CB-17F8-4096-8FAA-22810CCAF26A} = {4B009D0E-B651-4207-A55E-4D3ABE58FDCE}
+		{1482ADF1-DF36-4B5F-A317-E6050E2E7257} = {1D0F1C32-AEF3-4028-8A19-A6D420C8F281}
 	EndGlobalSection
 EndGlobal
