@@ -1,0 +1,22 @@
+{
+    "message" : "tasks",
+    "testsuite" : "Release1A",
+    "testsuiteID" : "1234",
+    "testsuitestartdate" : "12/12/2012",
+    "testsuiteenddate" : "12/12/2012",
+    "testcases" :
+    [
+        {
+        "plugin" : "SoapUIPlugin",
+        
+	    "results" :
+        {
+            "outcome" : "",
+            "message" : "",
+            "attachments" :
+            {
+            }
+         }
+        }   
+    ]
+}

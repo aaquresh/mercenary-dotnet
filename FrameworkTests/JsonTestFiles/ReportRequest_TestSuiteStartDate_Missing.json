@@ -1,0 +1,54 @@
+{
+    "message" : "tasks",
+    "testsuite" : "Release1A",
+    "testsuiteID" : "1234",
+    "testcases" :
+    [
+        {
+        "plugin" : "SoapUIPlugin",
+        "parameters" :
+        {
+	       "test" :
+            {
+                "case" : "GetToken",
+                "suite" : "GetSecurityTokens",
+                "project" : "TestProject"
+            },
+            "options" : 
+            {
+                "ExportAllResults" : "true"
+            }
+			},
+	    "results" :
+        {
+            "outcome" : "",
+            "message" : "",
+            "attachments" :
+            {
+            }
+         }
+        },
+	   {
+        "plugin" : "RanorexPlugin",
+        "parameters" :
+	    {
+	       "test" :
+            {
+                "case" : "RanoTestCase"
+            },
+            "options" : 
+            {
+                "ExportAllResults" : "true"
+            }
+			},
+	    "results" :
+        {
+            "outcome" : "",
+            "message" : "",
+            "attachments" :
+            {
+            }
+         }
+        }
+    ]
+}
