@@ -1,0 +1,74 @@
+﻿{
+    "plugin" : "SoapUIPlugin",
+	"parameters" :
+	{
+        "test" :
+        {
+            "case" : "GetToken",
+            "suite" : "GetSecurityTokens",
+            "project" : "TestProject1"
+        },
+        "options" : 
+        {
+            "ExportAllResults" : "true"
+        }
+	},
+    "results" :
+    {
+        "outcome" : "",
+        "message" : "",
+        "attachments" :
+        {
+        }
+    }
+}
+///////////////////////////////////////////////
+{
+    "plugin" : "SoapUIPlugin",
+	"parameters" :
+	{
+        "test" :
+        {
+            "case" : "UpdatePersonFHH",
+            "suite" : "AtoZ_PersonReq",
+            "project" : "TestProject1"
+        },
+        "options" : 
+        {
+            "ExportAllResults" : "true"
+        }
+	},
+    "results" :
+    {
+        "outcome" : "",
+        "message" : "",
+        "attachments" :
+        {
+        }
+    }
+}
+/////////////////////////////////////////////////
+{
+    "plugin" : "SoapUIPlugin",
+	"parameters" :
+	{
+        "test" :
+        {
+            "case" : "addUpdatePersonFHH",
+            "suite" : "AtoZ_PersonReq",
+            "project" : "TestProject1"
+        },
+        "options" : 
+        {
+            "ExportAllResults" : "true"
+        }
+	},
+    "results" :
+    {
+        "outcome" : "",
+        "message" : "",
+        "attachments" :
+        {
+        }
+    }
+}

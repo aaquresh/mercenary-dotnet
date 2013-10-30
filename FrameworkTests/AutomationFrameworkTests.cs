@@ -15,6 +15,7 @@ namespace FrameworkTests
         /// Test Case uses valid json request and verifies that something is returned.
         /// </summary>
         [TestMethod]
+        [DeploymentItem(@"\PluginFramework\PluginFramework\FHH-4-1-soapui-project.xml")]
         [DeploymentItem(@"\PluginFramework\PluginFramework\config.json")]
         public void RunTest_SoapUIPlugin_CorrectJsonRequest()
         {
@@ -28,7 +29,7 @@ namespace FrameworkTests
                 {
                     ""case"" : ""GetToken"",
                     ""suite"" : ""GetSecurityTokens"",
-                    ""project"" : ""TestProject""
+                    ""project"" : ""TestProject1""
                 },
                 ""options"" : 
                 {

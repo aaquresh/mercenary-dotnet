@@ -19,10 +19,10 @@ namespace FrameworkTests
         /// </summary>
 
         [TestMethod]
-        [DeploymentItem(@"FrameworkTests\JsonTestFiles\ReportRequest_TestCase_Populates.json")]
+        [DeploymentItem(@"FrameworkTests\JsonTestFiles\ReportRequest_Default.json")]
         public void ReportRequest_TestCase_Populates()
         {
-            string jsonRequest = ReadJsonFile("ReportRequest_TestCase_Populates.json");
+            string jsonRequest = ReadJsonFile("ReportRequest_Default.json");
 
             ReportRequest reportRequest = new ReportRequest(jsonRequest);
 
@@ -30,12 +30,22 @@ namespace FrameworkTests
         }
 
         [TestMethod]
-        [DeploymentItem(@"FrameworkTests\JsonTestFiles\ReportRequest_TestCase_Missing.json")]
+        [DeploymentItem(@"FrameworkTests\JsonTestFiles\ReportRequest_Default.json")]
         public void ReportRequest_TestCase_Missing()
         {
-            string jsonRequest = ReadJsonFile("ReportRequest_TestCase_Missing.json");
+            string jsonRequest = ReadJsonFile("ReportRequest_Default.json");
 
-            ReportRequest reportRequest = new ReportRequest(jsonRequest);
+            JObject jConfig = JObject.Parse(jsonRequest);
+
+            JArray jRay = (JArray)jConfig["testcases"];
+
+            int i = 0;
+            while (i < jRay.Count)
+            {
+                jConfig["testcases"][i].Remove();
+                i++;
+            }
+            ReportRequest reportRequest = new ReportRequest(jConfig.ToString());
 
             Assert.IsTrue(reportRequest.TestCases.Count() == 0);
             Assert.IsTrue(reportRequest.Error == "No test cases present in the json request file.");
@@ -46,10 +56,10 @@ namespace FrameworkTests
         /// </summary>
 
         [TestMethod]
-        [DeploymentItem(@"FrameworkTests\JsonTestFiles\ReportRequest_TestSuite_Exists.json")]
+        [DeploymentItem(@"FrameworkTests\JsonTestFiles\ReportRequest_Default.json")]
         public void ReportRequest_TestSuite_Exists()
         {
-            string jsonRequest = ReadJsonFile("ReportRequest_TestSuite_Exists.json");
+            string jsonRequest = ReadJsonFile("ReportRequest_Default.json");
 
             ReportRequest reportRequest = new ReportRequest(jsonRequest);
 
@@ -59,12 +69,15 @@ namespace FrameworkTests
         }
 
         [TestMethod]
-        [DeploymentItem(@"FrameworkTests\JsonTestFiles\ReportRequest_TestSuite_Missing.json")]
+        [DeploymentItem(@"FrameworkTests\JsonTestFiles\ReportRequest_Default.json")]
         public void ReportRequest_TestSuite_Missing()
         {
-            string jsonRequest = ReadJsonFile("ReportRequest_TestSuite_Missing.json");
+            string jsonRequest = ReadJsonFile("ReportRequest_Default.json");
 
-            ReportRequest reportRequest = new ReportRequest(jsonRequest);
+            JObject jConfig = JObject.Parse(jsonRequest);
+            jConfig.Remove("testsuite");
+
+            ReportRequest reportRequest = new ReportRequest(jConfig.ToString());
 
             Assert.IsTrue(reportRequest.TestSuite == null);
             Assert.IsTrue(reportRequest.TestCases == null);
@@ -72,12 +85,15 @@ namespace FrameworkTests
         }
 
         [TestMethod]
-        [DeploymentItem(@"FrameworkTests\JsonTestFiles\ReportRequest_TestSuite_Blank.json")]
+        [DeploymentItem(@"FrameworkTests\JsonTestFiles\ReportRequest_Default.json")]
         public void ReportRequest_TestSuite_Blank()
         {
-            string jsonRequest = ReadJsonFile("ReportRequest_TestSuite_Blank.json");
+            string jsonRequest = ReadJsonFile("ReportRequest_Default.json");
 
-            ReportRequest reportRequest = new ReportRequest(jsonRequest);
+            JObject jConfig = JObject.Parse(jsonRequest);
+            jConfig["testsuite"] = "";
+
+            ReportRequest reportRequest = new ReportRequest(jConfig.ToString());
 
             Assert.IsTrue(reportRequest.TestSuite == "");
             Assert.IsTrue(reportRequest.TestCases == null);
@@ -89,10 +105,10 @@ namespace FrameworkTests
         /// </summary>
 
         [TestMethod]
-        [DeploymentItem(@"FrameworkTests\JsonTestFiles\ReportRequest_TestSuiteID_Exists.json")]
+        [DeploymentItem(@"FrameworkTests\JsonTestFiles\ReportRequest_Default.json")]
         public void ReportRequest_TestSuiteID_Exists()
         {
-            string jsonRequest = ReadJsonFile("ReportRequest_TestSuiteID_Exists.json");
+            string jsonRequest = ReadJsonFile("ReportRequest_Default.json");
 
             ReportRequest reportRequest = new ReportRequest(jsonRequest);
 
@@ -101,34 +117,43 @@ namespace FrameworkTests
         }
 
         [TestMethod]
-        [DeploymentItem(@"FrameworkTests\JsonTestFiles\ReportRequest_TestSuiteID_Missing.json")]
+        [DeploymentItem(@"FrameworkTests\JsonTestFiles\ReportRequest_Default.json")]
         public void ReportRequest_TestSuiteID_Missing()
         {
-            string jsonRequest = ReadJsonFile("ReportRequest_TestSuiteID_Missing.json");
+            string jsonRequest = ReadJsonFile("ReportRequest_Default.json");
 
-            ReportRequest reportRequest = new ReportRequest(jsonRequest);
+            JObject jConfig = JObject.Parse(jsonRequest);
+            jConfig.Remove("testsuiteID");
+
+            ReportRequest reportRequest = new ReportRequest(jConfig.ToString());
 
             Assert.IsTrue(reportRequest.TestSuiteID == 0);
             Assert.IsTrue(reportRequest.TestCases.Count() > 0);
         }
 
         [TestMethod]
-        [DeploymentItem(@"FrameworkTests\JsonTestFiles\ReportRequest_TestSuiteID_Blank.json")]
+        [DeploymentItem(@"FrameworkTests\JsonTestFiles\ReportRequest_Default.json")]
         public void ReportRequest_TestSuiteID_Blank()
         {
-            string jsonRequest = ReadJsonFile("ReportRequest_TestSuiteID_Blank.json");
+            string jsonRequest = ReadJsonFile("ReportRequest_Default.json");
 
-            ReportRequest reportRequest = new ReportRequest(jsonRequest);
+            JObject jConfig = JObject.Parse(jsonRequest);
+            jConfig["testsuite"] = "";
+
+            ReportRequest reportRequest = new ReportRequest(jConfig.ToString());
 
             Assert.IsTrue(reportRequest.TestSuiteID == 0);
             Assert.IsTrue(reportRequest.TestCases.Count() > 0);
         }
 
         [TestMethod]
-        [DeploymentItem(@"FrameworkTests\JsonTestFiles\ReportRequest_TestSuiteID_NonInt.json")]
+        [DeploymentItem(@"FrameworkTests\JsonTestFiles\ReportRequest_Default.json")]
         public void ReportRequest_TestSuiteID_NonInt()
         {
-            string jsonRequest = ReadJsonFile("ReportRequest_TestSuiteID_NonInt.json");
+            string jsonRequest = ReadJsonFile("ReportRequest_Default.json");
+
+            JObject jConfig = JObject.Parse(jsonRequest);
+            jConfig["testsuite"] = "ABCDEF";
 
             ReportRequest reportRequest = new ReportRequest(jsonRequest);
 

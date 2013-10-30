@@ -45,6 +45,7 @@ namespace SoapUIPlugin
             {
                 jTestFile = JObject.Parse(jsonTestFile);
 
+
                 StreamReader sr = new StreamReader("config.json");
 
                 string config = sr.ReadToEnd();
@@ -65,7 +66,7 @@ namespace SoapUIPlugin
 
                 JObject jProject = JObject.Parse(config);
 
-                testProjectPath = "-I " + (string)jProject["SoapUIProjects"][testProject];
+                testProjectPath = "-I " + (string)jProject["plugin"][0]["SoapUIProjects"][testProject];
                 
 
 
