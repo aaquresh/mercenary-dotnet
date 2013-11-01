@@ -138,7 +138,7 @@ namespace FrameworkTests
             string jsonRequest = ReadJsonFile("ReportRequest_Default.json");
 
             JObject jConfig = JObject.Parse(jsonRequest);
-            jConfig["testsuite"] = "";
+            jConfig["testsuiteID"] = "";
 
             ReportRequest reportRequest = new ReportRequest(jConfig.ToString());
 
@@ -153,9 +153,9 @@ namespace FrameworkTests
             string jsonRequest = ReadJsonFile("ReportRequest_Default.json");
 
             JObject jConfig = JObject.Parse(jsonRequest);
-            jConfig["testsuite"] = "ABCDEF";
+            jConfig["testsuiteID"] = "ABCDEF";
 
-            ReportRequest reportRequest = new ReportRequest(jsonRequest);
+            ReportRequest reportRequest = new ReportRequest(jConfig.ToString());
 
             Assert.IsTrue(reportRequest.TestSuiteID == 0);
             Assert.IsTrue(reportRequest.TestCases == null);
@@ -168,12 +168,15 @@ namespace FrameworkTests
         /// </summary>
 
         [TestMethod]
-        [DeploymentItem(@"FrameworkTests\JsonTestFiles\ReportRequest_TestSuiteStartDate_Exists.json")]
+        [DeploymentItem(@"FrameworkTests\JsonTestFiles\ReportRequest_Default.json")]
         public void ReportRequest_TestSuiteStartDate_Exists()
         {
-            string jsonRequest = ReadJsonFile("ReportRequest_TestSuiteStartDate_Exists.json");
+            string jsonRequest = ReadJsonFile("ReportRequest_Default.json");
 
-            ReportRequest reportRequest = new ReportRequest(jsonRequest);
+            JObject jConfig = JObject.Parse(jsonRequest);
+
+
+            ReportRequest reportRequest = new ReportRequest(jConfig.ToString());
 
             Assert.IsTrue(reportRequest.TestCases.Count() > 0);
 
@@ -183,12 +186,15 @@ namespace FrameworkTests
         }
 
         [TestMethod]
-        [DeploymentItem(@"FrameworkTests\JsonTestFiles\ReportRequest_TestSuiteStartDate_Missing.json")]
+        [DeploymentItem(@"FrameworkTests\JsonTestFiles\ReportRequest_Default.json")]
         public void ReportRequest_TestSuiteStartDate_Missing()
         {
-            string jsonRequest = ReadJsonFile("ReportRequest_TestSuiteStartDate_Missing.json");
+            string jsonRequest = ReadJsonFile("ReportRequest_Default.json");
 
-            ReportRequest reportRequest = new ReportRequest(jsonRequest);
+            JObject jConfig = JObject.Parse(jsonRequest);
+            jConfig.Remove("testsuitestartdate");
+
+            ReportRequest reportRequest = new ReportRequest(jConfig.ToString());
 
             DateTime dt = new DateTime();
 
@@ -197,12 +203,15 @@ namespace FrameworkTests
         }
 
         [TestMethod]
-        [DeploymentItem(@"FrameworkTests\JsonTestFiles\ReportRequest_TestSuiteStartDate_Blank.json")]
+        [DeploymentItem(@"FrameworkTests\JsonTestFiles\ReportRequest_Default.json")]
         public void ReportRequest_TestSuiteStartDate_Blank()
         {
-            string jsonRequest = ReadJsonFile("ReportRequest_TestSuiteStartDate_Blank.json");
+            string jsonRequest = ReadJsonFile("ReportRequest_Default.json");
 
-            ReportRequest reportRequest = new ReportRequest(jsonRequest);
+            JObject jConfig = JObject.Parse(jsonRequest);
+            jConfig["testsuitestartdate"] = "";
+
+            ReportRequest reportRequest = new ReportRequest(jConfig.ToString());
 
             DateTime dt = new DateTime();
 
@@ -211,12 +220,15 @@ namespace FrameworkTests
         }
 
         [TestMethod]
-        [DeploymentItem(@"FrameworkTests\JsonTestFiles\ReportRequest_TestSuiteStartDate_NonDateTime.json")]
+        [DeploymentItem(@"FrameworkTests\JsonTestFiles\ReportRequest_Default.json")]
         public void ReportRequest_TestSuiteStartDate_NonDateTime()
         {
-            string jsonRequest = ReadJsonFile("ReportRequest_TestSuiteStartDate_NonDateTime.json");
+            string jsonRequest = ReadJsonFile("ReportRequest_Default.json");
 
-            ReportRequest reportRequest = new ReportRequest(jsonRequest);
+            JObject jConfig = JObject.Parse(jsonRequest);
+            jConfig["testsuitestartdate"] = "ABCDE";
+
+            ReportRequest reportRequest = new ReportRequest(jConfig.ToString());
 
             DateTime dt = new DateTime();
 
@@ -231,10 +243,10 @@ namespace FrameworkTests
         /// </summary>
 
         [TestMethod]
-        [DeploymentItem(@"FrameworkTests\JsonTestFiles\ReportRequest_TestSuiteEndDate_Exists.json")]
+        [DeploymentItem(@"FrameworkTests\JsonTestFiles\ReportRequest_Default.json")]
         public void ReportRequest_TestSuiteEndDate_Exists()
         {
-            string jsonRequest = ReadJsonFile("ReportRequest_TestSuiteEndDate_Exists.json");
+            string jsonRequest = ReadJsonFile("ReportRequest_Default.json");
 
             ReportRequest reportRequest = new ReportRequest(jsonRequest);
 
@@ -246,12 +258,15 @@ namespace FrameworkTests
         }
 
         [TestMethod]
-        [DeploymentItem(@"FrameworkTests\JsonTestFiles\ReportRequest_TestSuiteEndDate_Missing.json")]
+        [DeploymentItem(@"FrameworkTests\JsonTestFiles\ReportRequest_Default.json")]
         public void ReportRequest_TestSuiteEndDate_Missing()
         {
-            string jsonRequest = ReadJsonFile("ReportRequest_TestSuiteEndDate_Missing.json");
+            string jsonRequest = ReadJsonFile("ReportRequest_Default.json");
 
-            ReportRequest reportRequest = new ReportRequest(jsonRequest);
+            JObject jConfig = JObject.Parse(jsonRequest);
+            jConfig.Remove("testsuiteenddate");
+
+            ReportRequest reportRequest = new ReportRequest(jConfig.ToString());
 
             DateTime dt = new DateTime();
 
@@ -260,12 +275,15 @@ namespace FrameworkTests
         }
 
         [TestMethod]
-        [DeploymentItem(@"FrameworkTests\JsonTestFiles\ReportRequest_TestSuiteEndDate_Blank.json")]
+        [DeploymentItem(@"FrameworkTests\JsonTestFiles\ReportRequest_Default.json")]
         public void ReportRequest_TestSuiteEndDate_Blank()
         {
-            string jsonRequest = ReadJsonFile("ReportRequest_TestSuiteEndDate_Blank.json");
+            string jsonRequest = ReadJsonFile("ReportRequest_Default.json");
 
-            ReportRequest reportRequest = new ReportRequest(jsonRequest);
+            JObject jConfig = JObject.Parse(jsonRequest);
+            jConfig["testsuiteenddate"] = "";
+
+            ReportRequest reportRequest = new ReportRequest(jConfig.ToString());
 
             DateTime dt = new DateTime();
 
@@ -274,12 +292,15 @@ namespace FrameworkTests
         }
 
         [TestMethod]
-        [DeploymentItem(@"FrameworkTests\JsonTestFiles\ReportRequest_TestSuiteEndDate_NonDateTime.json")]
+        [DeploymentItem(@"FrameworkTests\JsonTestFiles\ReportRequest_Default.json")]
         public void ReportRequest_TestSuiteEndDate_NonDateTime()
         {
-            string jsonRequest = ReadJsonFile("ReportRequest_TestSuiteEndDate_NonDateTime.json");
+            string jsonRequest = ReadJsonFile("ReportRequest_Default.json");
 
-            ReportRequest reportRequest = new ReportRequest(jsonRequest);
+            JObject jConfig = JObject.Parse(jsonRequest);
+            jConfig["testsuiteenddate"] = "ABCDEF";
+
+            ReportRequest reportRequest = new ReportRequest(jConfig.ToString());
 
             DateTime dt = new DateTime();
 
@@ -289,38 +310,14 @@ namespace FrameworkTests
         }
 
         /// <summary>
-        /// Test NumberofTests unit tests
-        /// </summary>
-
-        [TestMethod]
-        [DeploymentItem(@"FrameworkTests\JsonTestFiles\ReportRequest_NumberofTests_Populates1.json")]
-        [DeploymentItem(@"FrameworkTests\JsonTestFiles\ReportRequest_NumberofTests_Populates5.json")]
-        [DeploymentItem(@"FrameworkTests\JsonTestFiles\ReportRequest_NumberofTests_Populates10.json")]
-        public void ReportRequest_NumberofTests_Populates()
-        {
-            string jsonRequest1 = ReadJsonFile("ReportRequest_NumberofTests_Populates1.json");
-            string jsonRequest2 = ReadJsonFile("ReportRequest_NumberofTests_Populates5.json");
-            string jsonRequest3 = ReadJsonFile("ReportRequest_NumberofTests_Populates10.json");
-
-            ReportRequest reportRequest1 = new ReportRequest(jsonRequest1);
-            ReportRequest reportRequest2 = new ReportRequest(jsonRequest2);
-            ReportRequest reportRequest3 = new ReportRequest(jsonRequest3);
-
-            Assert.IsTrue(reportRequest1.TestCases.Count() == reportRequest1.NumberofTests);
-            Assert.IsTrue(reportRequest2.TestCases.Count() == reportRequest2.NumberofTests);
-            Assert.IsTrue(reportRequest3.TestCases.Count() == reportRequest3.NumberofTests);
-
-        }
-
-        /// <summary>
         /// Test Parameters unit tests
         /// </summary>
 
         [TestMethod]
-        [DeploymentItem(@"FrameworkTests\JsonTestFiles\ReportRequest_TestParameters_Populates.json")]
+        [DeploymentItem(@"FrameworkTests\JsonTestFiles\ReportRequest_Default.json")]
         public void ReportRequest_TestParameters_Populates()
         {
-            string jsonRequest = ReadJsonFile("ReportRequest_TestParameters_Populates.json");
+            string jsonRequest = ReadJsonFile("ReportRequest_Default.json");
 
             ReportRequest reportRequest = new ReportRequest(jsonRequest);
 
@@ -332,12 +329,25 @@ namespace FrameworkTests
         }
 
         [TestMethod]
-        [DeploymentItem(@"FrameworkTests\JsonTestFiles\ReportRequest_TestParameters_Missing.json")]
+        [DeploymentItem(@"FrameworkTests\JsonTestFiles\ReportRequest_Default.json")]
         public void ReportRequest_TestParameters_Missing()
         {
-            string jsonRequest = ReadJsonFile("ReportRequest_TestParameters_Missing.json");
+            string jsonRequest = ReadJsonFile("ReportRequest_Default.json");
 
-            ReportRequest reportRequest = new ReportRequest(jsonRequest);
+            JObject jConfig = JObject.Parse(jsonRequest);
+
+            JArray jRay = (JArray)jConfig["testcases"];
+
+            int i = 0;
+            while (i < jRay.Count)
+            {
+                JObject test = (JObject)jConfig["testcases"][i];
+
+                test.Remove("parameters");
+                i++;
+            }
+
+            ReportRequest reportRequest = new ReportRequest(jConfig.ToString());
 
             foreach (TestCase tc in reportRequest)
             {
@@ -372,10 +382,10 @@ namespace FrameworkTests
 
 
         [TestMethod]
-        [DeploymentItem(@"FrameworkTests\JsonTestFiles\FrameworkTests_ReadJsonFile_ValidFile.json")]
+        [DeploymentItem(@"FrameworkTests\JsonTestFiles\ReportRequest_Default.json")]
         public void FrameworkTests_ReadJsonFile_ValidFile()
         {
-            string jsonFile = ReadJsonFile("FrameworkTests_ReadJsonFile_ValidFile.json");
+            string jsonFile = ReadJsonFile("ReportRequest_Default.json");
             Assert.AreNotEqual(jsonFile, "");
         }
 

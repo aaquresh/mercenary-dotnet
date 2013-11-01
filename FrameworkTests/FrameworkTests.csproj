@@ -68,95 +68,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="JsonTestFiles\ReportRequest_TestCase_Populates.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="JsonTestFiles\ReportRequest_TestSuiteID_Missing.json" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="JsonTestFiles\AutomationPluginRequest.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="JsonTestFiles\FrameworkTests_ReadJsonFile_ValidFile.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="JsonTestFiles\ReportPluginRequest.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="JsonTestFiles\ReportRequest_TestCase_Missing.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="JsonTestFiles\ReportRequest_TestSuite_Blank.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="JsonTestFiles\ReportRequest_TestSuite_Exists.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="JsonTestFiles\ReportRequest_TestSuite_Missing.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="JsonTestFiles\ReportRequest_TestSuiteID_Blank.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="JsonTestFiles\ReportRequest_TestSuiteID_Exists.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="JsonTestFiles\ReportRequest_TestSuiteID_NonInt.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="JsonTestFiles\ReportRequest_TestSuiteStartDate_Blank.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="JsonTestFiles\ReportRequest_TestSuiteStartDate_Exists.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="JsonTestFiles\ReportRequest_TestSuiteStartDate_Missing.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="JsonTestFiles\ReportRequest_TestSuiteStartDate_NonDateTime.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="JsonTestFiles\ReportRequest_TestSuiteEndDate_Blank.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="JsonTestFiles\ReportRequest_TestSuiteEndDate_Exists.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="JsonTestFiles\ReportRequest_TestSuiteEndDate_Missing.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="JsonTestFiles\ReportRequest_TestSuiteEndDate_NonDateTime.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="JsonTestFiles\ReportRequest_NumberofTests_Populates1.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="JsonTestFiles\ReportRequest_NumberofTests_Populates10.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="JsonTestFiles\ReportRequest_NumberofTests_Populates5.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="JsonTestFiles\ReportRequest_TestParameters_Populates.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="JsonTestFiles\ReportRequest_TestParameters_Missing.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
