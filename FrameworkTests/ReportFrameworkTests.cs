@@ -356,7 +356,25 @@ namespace FrameworkTests
             }
         }
 
+        /// <summary>
+        /// Test Parameters unit tests
+        /// </summary>
 
+        [TestMethod]
+        [DeploymentItem(@"FrameworkTests\JsonTestFiles\ReportRequest_Default.json")]
+        public void ReportRequest_TestParametersTest_Exists()
+        {
+            string jsonRequest = ReadJsonFile("ReportRequest_Default.json");
+
+            ReportRequest reportRequest = new ReportRequest(jsonRequest);
+
+            foreach (TestCase tc in reportRequest)
+            {
+                Assert.IsTrue(tc.TestParameters.Test[0, 0] != null);
+                Assert.IsTrue(tc.TestParameters.Test[1, 0] != null);
+            }
+
+        }
 
         
 

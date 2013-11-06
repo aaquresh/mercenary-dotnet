@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("WindowsService")]
+[assembly: AssemblyTitle("MercenaryEngine")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Intermountain Healthcare")]
-[assembly: AssemblyProduct("WindowsService")]
+[assembly: AssemblyProduct("MercenaryEngine")]
 [assembly: AssemblyCopyright("Copyright © Intermountain Healthcare 2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("d6263206-d444-4c26-87ee-340ee055546b")]
+[assembly: Guid("b5eb335a-806a-4446-816d-77dc79cb7a0f")]
 
 // Version information for an assembly consists of the following four values:
 //

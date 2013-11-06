@@ -1,6 +1,6 @@
-﻿namespace WindowsService
+﻿namespace MercenaryService
 {
-    partial class Service1
+    partial class MercenaryService
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,10 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            this.ServiceName = "Service1";
+            this.mEventLog = new System.Diagnostics.EventLog();
+            ((System.ComponentModel.ISupportInitialize)(this.mEventLog)).BeginInit();
+            // 
+            // MercenaryService
+            // 
+            this.CanPauseAndContinue = true;
+            this.CanShutdown = true;
+            this.ServiceName = "MercenaryService";
+            ((System.ComponentModel.ISupportInitialize)(this.mEventLog)).EndInit();
+
         }
 
         #endregion
+
+        public System.Diagnostics.EventLog mEventLog;
+
     }
 }

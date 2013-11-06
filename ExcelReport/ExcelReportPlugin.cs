@@ -274,7 +274,13 @@ namespace ExcelReport
 
         }
         //properties
-
+        public string[,] Test
+        {
+            get
+            {
+                return test;
+            }
+        }
     }
 
     
