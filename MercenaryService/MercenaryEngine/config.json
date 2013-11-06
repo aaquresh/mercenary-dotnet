@@ -1,4 +1,31 @@
 {
-	"role" : "target",
-	"port" : 1234
+	"role"    : "target",
+	"port"    : 1234,
+	"os"      : "windows",
+	"version" : 7,
+
+	"server" : "http://localhost/1235",
+
+	"plugins" :
+	{
+		"soapui" :
+		{
+			"namespace" : "SoapUIPlugin",
+			"name" : "SoapUIPlugin",
+			"dllLocation" : "C:\\Users\\cmnimnic\\Documents\\GitHub\\mercenary-dotnet\\Plugins\\SoapUIPlugin\\bin\\Debug\\SoapUIPlugin.dll",
+			"appPath" : "C:\\Program Files\\SmartBear\\soapUI-Pro-4.5.2\\bin",
+			"SoapUIProjects" :
+			{
+				"TestProject" : "C:\\Users\\cmnimnic\\Desktop\\FHH-4-1-soapui-project.xml",
+				"TestProject1" : "FHH-4-1-soapui-project.xml"
+			}
+		},
+
+		"ranorex" :
+		{
+			"namespace" : "RanorexPlugin",
+			"name" : "RanorexPlugin",
+			"dllLocation" : "C:\\Users\\cmnimnic\\Documents\\GitHub\\mercenary-dotnet\\Plugins\\RanorexPlugin\\bin\\Debug\\RanorexPlugin.dll"
+		}
+	}
 }

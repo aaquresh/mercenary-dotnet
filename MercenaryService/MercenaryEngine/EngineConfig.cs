@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Reflection;
 using System.IO;
 using Newtonsoft.Json.Linq;
@@ -9,14 +10,20 @@ namespace MercenaryEngine
     {
         private static EngineConfig config;
 
+        private Dictionary<string, JToken> plugins;
         private JObject json;
         private string role;
         private int port;
         private string path;
         private string brand;
+        private string os;
+        private string version;
+        private string server;
 
         private EngineConfig()
         {
+            this.plugins = new Dictionary<string, JToken>();
+
             path = System.IO.Path.GetDirectoryName(Assembly.GetAssembly(typeof(EngineConfig)).CodeBase);
             string file = new Uri(path + System.IO.Path.DirectorySeparatorChar + "config.json").LocalPath;
 
@@ -34,14 +41,41 @@ namespace MercenaryEngine
 
         private void InitializeJson()
         {
-            JToken rvalue = json.GetValue("role");
-            this.role = ((rvalue != null) && (rvalue.Type == JTokenType.String)) ? rvalue.ToString().ToLower() : "server";
+            JToken tokenrole = json["role"];
+            this.role = ((tokenrole != null) && (tokenrole.Type == JTokenType.String)) ? tokenrole.ToString().ToLower() : "server";
 
-            JToken pvalue = json.GetValue("port");
-            this.port = ((pvalue != null) && (pvalue.Type == JTokenType.Integer)) ? (int) pvalue : 1234;
+            if (this.role.Equals("target"))
+            {
+                JToken tokenserver = json["server"];
+                this.server = (tokenserver != null) ? tokenserver.ToString() : null;
+            }
 
-            JToken bvalue = json.GetValue("brand");
-            this.brand = ((bvalue != null) && (bvalue.Type == JTokenType.String)) ? bvalue.ToString() : "Mercenary";
+            JToken tokenport = json["port"];
+            this.port = ((tokenport != null) && (tokenport.Type == JTokenType.Integer)) ? (int) tokenport : 1234;
+
+            JToken tokenbrand = json["brand"];
+            this.brand = ((tokenbrand != null) && (tokenbrand.Type == JTokenType.String)) ? tokenbrand.ToString() : "Mercenary";
+
+            JToken tokenos = json["os"];
+            this.os = (tokenos != null) ? tokenos.ToString() : null;
+
+            JToken tokenversion = json["version"];
+            this.version = (tokenversion != null) ? tokenversion.ToString() : "";
+
+            JToken pluginstoken = json["plugins"];
+            if (pluginstoken != null)
+            {
+                foreach (JToken plugintoken in pluginstoken.Children())
+                {
+                    if (plugintoken is JProperty)
+                    {
+                        var plugin = plugintoken as JProperty;
+                        plugins.Add(plugin.Name.ToString(), plugin.Value as JToken);
+                    }
+                }
+            }
+
+            return;
         }
 
         public static EngineConfig GetConfig ()
@@ -60,23 +94,14 @@ namespace MercenaryEngine
             return config;
         }
 
-        public string GetValue(string key)
+        public JToken GetValue(string key)
         {
-            JToken value = json.SelectToken(key);
-            if ((value != null) && (value.Type == JTokenType.String))
+            JToken value = json[key];
+            if (value != null)
             {
-                return value.ToString();
+                return value;
             }
-            return null;
-        }
 
-        public JArray GetArray(string key)
-        {
-            JToken value = json.SelectToken(key);
-            if ((value != null) && (value.Type == JTokenType.Array))
-            {
-                JArray.Parse(value.ToString());
-            }
             return null;
         }
 
@@ -98,6 +123,31 @@ namespace MercenaryEngine
         public int Port
         {
             get { return this.port; }
+        }
+
+        public string OS
+        {
+            get { return this.os + " " + this.version; }
+        }
+
+        public string Server
+        {
+            get { return this.server; }
+        }
+
+        public JObject Json
+        {
+            get { return this.json; }
+        }
+
+        public Dictionary<string, JToken> Plugins
+        {
+            get { return this.plugins; }
+        }
+
+        public JToken GetPlugin(string key)
+        {
+            return plugins[key];
         }
     }
 }

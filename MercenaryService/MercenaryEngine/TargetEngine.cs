@@ -19,7 +19,8 @@ namespace MercenaryEngine
 
         protected override void Initializer()
         {
-
+            // Check plugins
+            // Register with server
         }
 
         #region Engine Implementation
@@ -108,16 +109,11 @@ namespace MercenaryEngine
 
         private void TaskExecution()
         {
-            // Chris: Start here
-
-            string test = PluginFramework.PluginFramework.RunTest(json.ToString());
-
-
             json = JObject.Parse(PluginFramework.PluginFramework.RunTest(json.ToString()));
-
             Console.WriteLine(json.ToString());
-            // Scott: Send response here
+
             this.task = null;
+            this.json = null;
         }
 
         #endregion
