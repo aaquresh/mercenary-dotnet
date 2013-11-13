@@ -28,7 +28,7 @@ namespace MercenaryService
                 engine.Terminate();
             }
 
-            engine = EngineFactory.CreateInstance();
+            engine = Engine.CreateInstance();
             engine.Initialize(this, mEventLog);
             engine.StartListening();
         }

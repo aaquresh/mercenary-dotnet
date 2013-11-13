@@ -196,5 +196,23 @@ namespace MercenaryEngine
         protected abstract void Initializer();
         public abstract void Terminate();
         #endregion
+
+        public static Engine CreateInstance()
+        {
+            EngineConfig config = EngineConfig.GetConfig();
+            Engine engine;
+
+            switch (config.Role)
+            {
+                case "server":
+                    engine = new ServerEngine();
+                    break;
+                default:
+                    engine = new TargetEngine();
+                    break;
+            }
+
+            return engine;
+        }
     }
 }

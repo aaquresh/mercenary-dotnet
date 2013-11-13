@@ -18,7 +18,7 @@ namespace MercenaryService
             ServiceBase sb = new ServiceBase();
             EventLog log = new EventLog();
 
-            Engine engine = EngineFactory.CreateInstance();
+            Engine engine = Engine.CreateInstance();
             engine.Initialize(sb, log);
             engine.StartListening();
 
