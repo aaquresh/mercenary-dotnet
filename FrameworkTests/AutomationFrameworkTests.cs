@@ -23,29 +23,30 @@ namespace FrameworkTests
             string jsonResponse = PluginFramework.PluginFramework.RunTest(@"
 
         {
-    		""plugin"" : ""SoapUIPlugin"",
-			""parameters"" :
-			{
-                ""test"" :
+	""plugin"" : ""RanorexPlugin"",
+	""parameters"" :
+	{
+	       ""test"" :
                 {
-                    ""case"" : ""GetToken"",
-                    ""suite"" : ""GetSecurityTokens"",
-                    ""project"" : ""TestProject1""
+                    ""testSuiteName"" : ""Test1"",
+                    ""testSuitePath"" : ""C:\\Users\\cmnimnic\\Documents\\GitHub\\mercenary-dotnet\\RanorexTestCasesSamples\\bin\\Debug\\RanorexTestCasesSamples.dll"",
+                    ""testSuiteNamespace"" : ""RanorexTestCaseSamples""
                 },
                 ""options"" : 
                 {
                     ""ExportAllResults"" : ""true""
                 }
 			},
-            ""results"" :
-            {
-                ""outcome"" : """",
-                ""message"" : """",
-                ""attachments"" :
-                {
-                }
-            }
-		}
+	  ""results"" :
+         {
+              	""outcome"" : """",
+                	""message"" : """",
+                	""attachments"" :
+                	{
+                	}
+         }
+}
+
 ");
             Assert.AreNotEqual("", jsonResponse);
         }

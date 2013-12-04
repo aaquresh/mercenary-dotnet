@@ -80,6 +80,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <None Include="JsonTestFiles\AutomationPluginRequestRanorex.json" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

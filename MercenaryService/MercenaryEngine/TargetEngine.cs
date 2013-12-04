@@ -112,6 +112,8 @@ namespace MercenaryEngine
             json = JObject.Parse(PluginFramework.PluginFramework.RunTest(json.ToString()));
             Console.WriteLine(json.ToString());
 
+            // Scott: Send response here
+
             this.task = null;
             this.json = null;
         }

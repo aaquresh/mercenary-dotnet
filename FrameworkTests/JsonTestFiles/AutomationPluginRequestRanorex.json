@@ -1,0 +1,24 @@
+﻿{
+	"plugin" : "RanorexPlugin",
+	"parameters" :
+	{
+	       "test" :
+                {
+                    "testSuiteName" : "Test1",
+                    "testSuitePath" : "C:\\Users\\cmnimnic\\Documents\\GitHub\\mercenary-dotnet\\RanorexTestCasesSamples\\bin\\Debug",
+                    "testSuiteNamespace" : "RanorexTestCaseSamples"
+                },
+                "options" : 
+                {
+                    "ExportAllResults" : "true"
+                }
+			},
+	  "results" :
+         {
+              	"outcome" : "",
+                	"message" : "",
+                	"attachments" :
+                	{
+                	}
+         }
+}
